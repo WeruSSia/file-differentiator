@@ -50,4 +50,8 @@ public class FileDifferentiator {
     private String getFileExtension(String filename) {
         return filename.substring(filename.lastIndexOf(".") + 1).toLowerCase();
     }
+
+    private boolean isExtensionHandled(String inputFileExtension) {
+        return handledExtensions.contains(inputFileExtension);
+    }
 }
