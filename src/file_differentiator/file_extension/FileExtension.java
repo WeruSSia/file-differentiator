@@ -2,7 +2,7 @@ package file_differentiator.file_extension;
 
 import java.util.Set;
 
-public class FileExtension {
+public abstract class FileExtension {
     private final String name;
     private final Set<String> magicNumbers;
 
