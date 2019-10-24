@@ -18,6 +18,7 @@ public class FileDifferentiator {
         handledExtensions.add(new Gif());
         handledExtensions.add(new Txt());
         handledExtensions.add(new Exe());
+        handledExtensions.add(new Rar());
     }
 
     public void differentiate(String filename) throws UnhandledExtensionException, IOException {
