@@ -51,12 +51,12 @@ public class FileDifferentiator {
         return filename.substring(filename.lastIndexOf(".") + 1).toLowerCase();
     }
 
-    private boolean isExtensionHandled(String inputFileExtension) {
+    private void checkIfExtensionIsHandled(String inputFileExtension) throws UnhandledExtensionException {
         for (FileExtension fileExtension : handledExtensions) {
             if (fileExtension.getName().equals(inputFileExtension)) {
-                return true;
+                return;
             }
         }
-        return false;
+        throw new UnhandledExtensionException();
     }
 }
