@@ -25,8 +25,7 @@ public class FileDifferentiator {
     }
 
     public void differentiate(String filename) throws UnhandledExtensionException, IOException {
-        byte[] fileContentAsByteArray = readFile(filename);
-        String fileContentAsString = convertByteArrayToHexString(fileContentAsByteArray);
+        String fileContentAsString = convertByteArrayToHexString(readFile(filename));
         String inputFileExtension = getFileExtension(filename);
         checkIfExtensionIsHandled(inputFileExtension);
         String realFileExtension = checkRealFileExtension(fileContentAsString);
