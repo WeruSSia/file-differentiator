@@ -52,6 +52,11 @@ public class FileDifferentiator {
     }
 
     private boolean isExtensionHandled(String inputFileExtension) {
-        return handledExtensions.contains(inputFileExtension);
+        for (FileExtension fileExtension : handledExtensions) {
+            if (fileExtension.getName().equals(inputFileExtension)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
