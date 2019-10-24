@@ -60,4 +60,13 @@ public class FileDifferentiator {
         }
         throw new UnhandledExtensionException();
     }
+
+    private String checkRealFileExtension(String fileContent) {
+        for (FileExtension fileExtension : handledExtensions) {
+            if (fileExtension.doesFileContentMatchExtension(fileContent)) {
+                return fileExtension.getName();
+            }
+        }
+        return "txt";
+    }
 }
