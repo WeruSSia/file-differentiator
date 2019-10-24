@@ -1,11 +1,10 @@
 package file_differentiator.file_extension;
 
 import java.util.HashSet;
-import java.util.Set;
 
 public class Jpg extends FileExtension {
 
-    protected Jpg(String name, Set<String> magicNumbers) {
+    public Jpg() {
         super("jpg", new HashSet<String>() {{
             add("FFD8FFDB");
             add("FFD8FFE000104A4649460001");
