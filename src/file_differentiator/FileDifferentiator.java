@@ -26,6 +26,7 @@ public class FileDifferentiator {
         String fileContentAsString = convertByteArrayToHexString(fileContentAsByteArray);
         String inputFileExtension = getFileExtension(filename);
         checkIfExtensionIsHandled(inputFileExtension);
+        String realFileExtension = checkRealFileExtension(fileContentAsString);
     }
 
     private byte[] readFile(String filename) throws IOException {
