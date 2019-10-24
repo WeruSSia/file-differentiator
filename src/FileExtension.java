@@ -1,4 +1,6 @@
+import java.util.Set;
+
 public interface FileExtension {
     String getName();
-    String getMagicNumbers();
+    Set<String> getMagicNumbers();
 }
