@@ -1,9 +1,6 @@
 package file_differentiator;
 
-import file_differentiator.file_extension.FileExtension;
-import file_differentiator.file_extension.Gif;
-import file_differentiator.file_extension.Jpg;
-import file_differentiator.file_extension.Txt;
+import file_differentiator.file_extension.*;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -20,6 +17,7 @@ public class FileDifferentiator {
         handledExtensions.add(new Jpg());
         handledExtensions.add(new Gif());
         handledExtensions.add(new Txt());
+        handledExtensions.add(new Exe());
     }
 
     public void differentiate(String filename) throws UnhandledExtensionException, IOException {
