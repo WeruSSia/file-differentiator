@@ -1,13 +1,24 @@
 package file_differentiator;
 
+import file_differentiator.file_extension.FileExtension;
+import file_differentiator.file_extension.Gif;
+import file_differentiator.file_extension.Jpg;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.HashSet;
+import java.util.Set;
 
 public class FileDifferentiator {
 
-    public FileDifferentiator() {
+    private Set<FileExtension> handledExtensions;
 
+    public FileDifferentiator() {
+        handledExtensions = new HashSet<FileExtension>() {{
+            add(new Jpg());
+            add(new Gif());
+        }};
     }
 
     public void differentiate(String filename) {
