@@ -1,17 +1,12 @@
 import java.util.HashSet;
 import java.util.Set;
 
-public class Gif implements FileExtension {
-    @Override
-    public String getName() {
-        return "gif";
-    }
+public class Gif extends FileExtension {
 
-    @Override
-    public Set<String> getMagicNumbers() {
-        return new HashSet<String>() {{
+    protected Gif(String name, Set<String> magicNumbers) {
+        super("gif", new HashSet<String>() {{
             add("474946383761");
             add("474946383961");
-        }};
+        }});
     }
 }
