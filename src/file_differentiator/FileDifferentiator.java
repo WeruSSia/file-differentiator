@@ -15,10 +15,9 @@ public class FileDifferentiator {
     private Set<FileExtension> handledExtensions;
 
     public FileDifferentiator() {
-        handledExtensions = new HashSet<FileExtension>() {{
-            add(new Jpg());
-            add(new Gif());
-        }};
+        handledExtensions = new HashSet<>();
+        handledExtensions.add(new Jpg());
+        handledExtensions.add(new Gif());
     }
 
     public void differentiate(String filename) throws UnhandledExtensionException, IOException {
