@@ -27,6 +27,7 @@ public class FileDifferentiator {
         String inputFileExtension = getFileExtension(filename);
         checkIfExtensionIsHandled(inputFileExtension);
         String realFileExtension = checkRealFileExtension(fileContentAsString);
+        compareExtensions(inputFileExtension, realFileExtension);
     }
 
     private byte[] readFile(String filename) throws IOException {
@@ -61,5 +62,13 @@ public class FileDifferentiator {
             }
         }
         return "txt";
+    }
+
+    private void compareExtensions(String inputFileExtension, String realFileExtension) {
+        if (inputFileExtension.equals(realFileExtension)) {
+            System.out.println("The extension is true");
+        } else {
+            System.out.println("Extension is ." + inputFileExtension + ", while actually it's a ." + realFileExtension + ".");
+        }
     }
 }
