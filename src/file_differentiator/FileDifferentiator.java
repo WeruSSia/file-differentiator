@@ -12,10 +12,11 @@ public class FileDifferentiator {
 
     public void differentiate(String filename) {
         byte[] fileContentAsByteArray = readFile(filename);
-        String fileContent;
+        String fileContentAsString;
         if (fileContentAsByteArray != null) {
-            fileContent = convertByteArrayToHexString(fileContentAsByteArray);
+            fileContentAsString = convertByteArrayToHexString(fileContentAsByteArray);
         }
+        String inputFileExtension = getFileExtension(filename);
     }
 
     private byte[] readFile(String filename) {
@@ -33,5 +34,9 @@ public class FileDifferentiator {
             stringHex.append(String.format("%02X", b));
         }
         return stringHex.toString();
+    }
+
+    private String getFileExtension(String filename) {
+        return filename.substring(filename.lastIndexOf(".") + 1).toLowerCase();
     }
 }
