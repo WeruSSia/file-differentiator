@@ -1,3 +1,5 @@
+package file_differentiator;
+
 import java.util.HashSet;
 import java.util.Set;
 

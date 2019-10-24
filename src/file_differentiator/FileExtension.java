@@ -1,3 +1,5 @@
+package file_differentiator;
+
 import java.util.Set;
 
 public class FileExtension {
