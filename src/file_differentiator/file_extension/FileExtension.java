@@ -1,4 +1,4 @@
-package file_differentiator;
+package file_differentiator.file_extension;
 
 import java.util.Set;
 
