@@ -23,6 +23,7 @@ public class FileDifferentiator {
         handledExtensions.add(new Png());
         handledExtensions.add(new Class());
         handledExtensions.add(new Pdf());
+        handledExtensions.add(new Bmp());
     }
 
     public void differentiate(String filename) throws UnhandledExtensionException, IOException {
