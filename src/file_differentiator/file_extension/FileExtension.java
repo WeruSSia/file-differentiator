@@ -11,11 +11,22 @@ public abstract class FileExtension {
         this.magicNumbers = magicNumbers;
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 
-    public boolean containsMagicNumber(String magicNumber){
-        return magicNumbers.contains(magicNumber);
+    public boolean doesFileContentMatchExtension(String fileContent) {
+        for (String magicNumber : magicNumbers) {
+            String fileHeader;
+            try {
+                fileHeader = fileContent.substring(0, magicNumber.length());
+            } catch (IndexOutOfBoundsException e) {
+                fileHeader = fileContent;
+            }
+            if (fileHeader.equals(magicNumber)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
