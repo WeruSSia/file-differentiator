@@ -21,23 +21,15 @@ public class FileDifferentiator {
         }};
     }
 
-    public void differentiate(String filename) throws UnhandledExtensionException {
+    public void differentiate(String filename) throws UnhandledExtensionException, IOException {
         byte[] fileContentAsByteArray = readFile(filename);
-        String fileContentAsString;
-        if (fileContentAsByteArray != null) {
-            fileContentAsString = convertByteArrayToHexString(fileContentAsByteArray);
-        }
+        String fileContentAsString = convertByteArrayToHexString(fileContentAsByteArray);
         String inputFileExtension = getFileExtension(filename);
         checkIfExtensionIsHandled(inputFileExtension);
     }
 
-    private byte[] readFile(String filename) {
-        try {
-            return Files.readAllBytes(Paths.get(filename));
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
-        return null;
+    private byte[] readFile(String filename) throws IOException {
+        return Files.readAllBytes(Paths.get(filename));
     }
 
     private String convertByteArrayToHexString(byte[] data) {
