@@ -21,13 +21,14 @@ public class FileDifferentiator {
         }};
     }
 
-    public void differentiate(String filename) {
+    public void differentiate(String filename) throws UnhandledExtensionException {
         byte[] fileContentAsByteArray = readFile(filename);
         String fileContentAsString;
         if (fileContentAsByteArray != null) {
             fileContentAsString = convertByteArrayToHexString(fileContentAsByteArray);
         }
         String inputFileExtension = getFileExtension(filename);
+        checkIfExtensionIsHandled(inputFileExtension);
     }
 
     private byte[] readFile(String filename) {
