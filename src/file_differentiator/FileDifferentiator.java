@@ -1,6 +1,7 @@
 package file_differentiator;
 
 import file_differentiator.file_extension.*;
+import file_differentiator.file_extension.Class;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -20,6 +21,7 @@ public class FileDifferentiator {
         handledExtensions.add(new Exe());
         handledExtensions.add(new Rar());
         handledExtensions.add(new Png());
+        handledExtensions.add(new Class());
     }
 
     public void differentiate(String filename) throws UnhandledExtensionException, IOException {
